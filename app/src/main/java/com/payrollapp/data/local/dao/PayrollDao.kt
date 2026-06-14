@@ -1,9 +1,12 @@
-package com.payrollapp.data.remote
+package com.payrollapp.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
+import com.payrollapp.data.local.entity.EmployeeEntity
+import com.payrollapp.data.local.entity.PayrollEntity
+import com.payrollapp.data.local.relation.PayrollWithEmployees
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -22,7 +25,7 @@ interface PayrollDao {
     suspend fun getPayroll(id: Long): PayrollWithEmployees?
 
     @Insert
-    suspend fun insertPayroll(payroll: PayrollEntity)
+    suspend fun insertPayroll(payroll: PayrollEntity): Long
 
     @Insert
     suspend fun insertEmployees(

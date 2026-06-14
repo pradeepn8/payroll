@@ -4,10 +4,9 @@ import android.content.Context
 import androidx.room.Room
 import com.payrollapp.data.remote.MockPayrollApi
 import com.payrollapp.data.local.PayrollDatabase
-import com.payrollapp.data.remote.PayrollRepositoryImpl
+import com.payrollapp.data.repository.PayrollRepositoryImpl
 import com.payrollapp.domain.usecase.CreatePayrollUseCase
 import com.payrollapp.domain.usecase.GetPayrollDetailUseCase
-import com.payrollapp.domain.usecase.GetPayrollsUseCase
 import com.payrollapp.domain.repository.PayrollRepository
 import com.payrollapp.domain.usecase.ObservePayrollsUseCase
 

@@ -1,10 +1,9 @@
-package com.payrollapp.presentation
+package com.payrollapp.presentation.factory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.payrollapp.domain.usecase.CreatePayrollUseCase
 import com.payrollapp.domain.usecase.GetPayrollDetailUseCase
-import com.payrollapp.domain.usecase.GetPayrollsUseCase
 import com.payrollapp.domain.usecase.ObservePayrollsUseCase
 import com.payrollapp.presentation.createpayroll.CreatePayrollViewModel
 import com.payrollapp.presentation.payrolldetail.PayrollDetailViewModel
@@ -27,7 +26,6 @@ class PayrollViewModelFactory(
             ) -> {
 
                 PayrollListViewModel(
-//                    getPayrollsUseCase
                     observePayrollsUseCase
                 ) as T
             }

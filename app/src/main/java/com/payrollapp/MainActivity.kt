@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.payrollapp.presentation.PayrollViewModelFactory
+import com.payrollapp.presentation.factory.PayrollViewModelFactory
 import com.payrollapp.presentation.navigation.PayrollNavGraph
 
 class MainActivity : ComponentActivity() {

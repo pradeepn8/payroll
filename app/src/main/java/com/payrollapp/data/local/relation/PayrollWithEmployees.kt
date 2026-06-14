@@ -1,7 +1,9 @@
-package com.payrollapp.data.remote
+package com.payrollapp.data.local.relation
 
 import androidx.room.Embedded
 import androidx.room.Relation
+import com.payrollapp.data.local.entity.EmployeeEntity
+import com.payrollapp.data.local.entity.PayrollEntity
 
 data class PayrollWithEmployees(
 

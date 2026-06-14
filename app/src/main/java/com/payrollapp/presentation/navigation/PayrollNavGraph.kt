@@ -6,7 +6,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.*
 import androidx.navigation.navArgument
-import com.payrollapp.presentation.PayrollViewModelFactory
+import com.payrollapp.presentation.factory.PayrollViewModelFactory
 import com.payrollapp.presentation.createpayroll.CreatePayrollScreen
 import com.payrollapp.presentation.createpayroll.CreatePayrollViewModel
 import com.payrollapp.presentation.payrolldetail.PayrollDetailScreen

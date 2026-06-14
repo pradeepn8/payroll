@@ -2,9 +2,9 @@ package com.payrollapp.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.payrollapp.data.remote.EmployeeEntity
-import com.payrollapp.data.remote.PayrollDao
-import com.payrollapp.data.remote.PayrollEntity
+import com.payrollapp.data.local.entity.EmployeeEntity
+import com.payrollapp.data.local.dao.PayrollDao
+import com.payrollapp.data.local.entity.PayrollEntity
 
 @Database(
     entities = [
