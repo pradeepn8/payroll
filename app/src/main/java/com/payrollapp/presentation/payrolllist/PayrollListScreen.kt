@@ -1,7 +1,9 @@
 package com.payrollapp.presentation.payrolllist
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -10,9 +12,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
@@ -39,34 +43,51 @@ fun PayrollListScreen(
 
     ) { padding ->
 
-        LazyColumn(
-            modifier = Modifier.padding(padding)
-        ) {
+        if (state.payrolls.isEmpty()) {
 
-            items(state.payrolls) { payroll ->
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(padding),
+                contentAlignment = Alignment.Center
+            ) {
 
-                Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp)
-                        .clickable {
-                            onPayrollClick(payroll.id)
-                        }
-                ) {
+                Text(
+                    text = "No Payrolls Created",
+                    style = MaterialTheme.typography.bodyLarge
+                )
+            }
 
-                    Column(
-                        modifier = Modifier.padding(16.dp)
+        } else {
+            LazyColumn(
+                modifier = Modifier.padding(padding)
+            ) {
+
+                items(state.payrolls) { payroll ->
+
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp)
+                            .clickable {
+                                onPayrollClick(payroll.id)
+                            }
                     ) {
 
-                        Text(payroll.createdDate)
+                        Column(
+                            modifier = Modifier.padding(16.dp)
+                        ) {
 
-                        Text(
-                            "Employees: ${payroll.employees.size}"
-                        )
+                            Text(payroll.createdDate)
 
-                        Text(
-                            "Amount: ${payroll.totalAmount}"
-                        )
+                            Text(
+                                "Employees: ${payroll.employees.size}"
+                            )
+
+                            Text(
+                                "Amount: ${payroll.totalAmount}"
+                            )
+                        }
                     }
                 }
             }
