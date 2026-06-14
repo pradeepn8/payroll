@@ -30,7 +30,6 @@ class AppContainer(
     private val repository:
             PayrollRepository =
         PayrollRepositoryImpl(
-            api,
             dao
         )
 
