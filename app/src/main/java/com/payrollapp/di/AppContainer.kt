@@ -2,7 +2,6 @@ package com.payrollapp.di
 
 import android.content.Context
 import androidx.room.Room
-import com.payrollapp.data.remote.MockPayrollApi
 import com.payrollapp.data.local.PayrollDatabase
 import com.payrollapp.data.repository.PayrollRepositoryImpl
 import com.payrollapp.domain.usecase.CreatePayrollUseCase
@@ -23,9 +22,6 @@ class AppContainer(
 
     private val dao =
         database.payrollDao()
-
-    private val api =
-        MockPayrollApi()
 
     private val repository:
             PayrollRepository =
