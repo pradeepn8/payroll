@@ -10,7 +10,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class PayrollRepositoryImpl(
-    private val api: PayrollApi,
     private val dao: PayrollDao
 ) : PayrollRepository {
 
